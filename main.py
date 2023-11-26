@@ -20,12 +20,13 @@ def pcmax_greedy(processes, processors):
 # lista zadan/procesow z pliku
 file = open("procesy.txt", "r")
 content = file.read().split()
-processes = [int(i) for i in content]
+numbers = [int(i) for i in content]
 
-# zdefiniuj ilosc procesorw przez input
-processors = 0
-while (processors < 1):
-    processors = int(input("Podaj ilość procesorów: "))
+#pierwsza liczba to ilosc procesorow
+processors = numbers[0]
+
+#procesy zaczynaja sie po 2 liczbie
+processes = numbers[2:]
 
 end_time = pcmax_greedy(processes, processors)
 print("Ostatni proces zakonczy sie po:", end_time)
